@@ -1,0 +1,70 @@
+defaults:
+  - task@_global_: walker_walk
+  - agent: drqv2
+
+# task settings
+frame_stack: 3
+action_repeat: 2
+discount: 0.99
+# train settings
+num_seed_frames: 4000
+# eval
+eval_every_frames: 10000
+num_eval_episodes: 10
+# snapshot
+save_snapshot: false
+# replay buffer
+replay_buffer_size: 1000000
+replay_buffer_num_workers: 2
+nstep: 3
+batch_size: 256
+# misc
+seed: 1
+device: cuda
+save_video: true
+save_train_video: false
+use_tb: false
+# experiment
+experiment: exp
+# agent
+lr: 1e-4
+feature_dim: 50
+
+gradient_update: 1
+
+# reward learning
+segment: 50
+activation: tanh
+num_unsup_frames: 0
+num_interact: 5000
+reward_lr: 3e-5
+reward_batch: 128
+reward_update: 200
+feed_type: 0
+reset_update: 100
+topK: 5
+ensemble_size: 3
+max_feedback: 1400
+large_batch: 10
+label_margin: 0.0
+teacher_type: 0
+teacher_noise: 0
+teacher_margin: 0
+teacher_thres: 0
+reward_stack: true
+reward_max_episodes: 20
+reward_capacity: 2000
+
+# augmentation
+img_shift: 0
+time_shift: 0
+time_crop: 0
+
+# scheduling
+reward_schedule: 0
+
+
+hydra:
+  run:
+    dir: ./exp_PEBBLE/${task_name}/seed${seed}/max_feedback${max_feedback}_n${reward_batch}_l${segment}
+  

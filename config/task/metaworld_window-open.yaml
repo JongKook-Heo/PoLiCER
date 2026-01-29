@@ -1,0 +1,8 @@
+# defaults:
+#   - easy
+
+task_name: metaworld_window-open
+nstep: 1
+batch_size: 512
+num_train_frames: 1100000
+stddev_schedule: 'linear(1.0,0.1,100000)'
