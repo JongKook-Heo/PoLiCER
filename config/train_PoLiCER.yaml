@@ -1,0 +1,79 @@
+defaults:
+    - agent: sac
+    
+# this needs to be specified manually
+experiment: PoLiCER
+
+# reward learning
+segment: 50
+activation: tanh
+num_seed_steps: 1000
+num_unsup_steps: 9000
+num_interact: 5000
+reward_lr: 0.0003
+reward_batch: 10
+reward_update: 200
+feed_type: 1
+reset_update: 100
+topK: 5
+ensemble_size: 3
+max_feedback: 100
+large_batch: 10
+label_margin: 0.0
+teacher_beta: -1
+teacher_gamma: 1
+teacher_eps_mistake: 0
+teacher_eps_skip: 0
+teacher_eps_equal: 0
+
+# scheduling
+reward_schedule: 0
+
+num_train_steps: 1e6
+replay_buffer_capacity: ${num_train_steps}
+
+# evaluation config
+eval_frequency: 10000
+num_eval_episodes: 10
+device: cuda
+
+# logger
+log_frequency: 10000
+log_save_tb: false
+
+# video recorder
+save_video: false
+
+# setups
+seed: 1
+
+#PLS
+tau_min: 0.7
+tau_max: 0.7
+tau_delta: 0.0
+use_pls_sampling: True
+max_reward_buffer_size: 100
+
+# TA
+data_aug_ratio: 20
+dataaug_window: 5
+crop_range: 5
+use_crop_aug: False
+
+#CER
+rreset: 3
+qreset: True
+init_k: 25
+step_k : 0.9
+increase_q: 7.5
+max_rr: 4
+
+video_record_path: 
+
+# Environment
+env: walker_walk
+
+# hydra configuration
+hydra:
+    run:
+        dir: ./exp_PoLiCER/${env}/seed${seed}/max_feedback${max_feedback}_n${reward_batch}_l${segment}_g${teacher_gamma}_b${teacher_beta}_m${teacher_eps_mistake}_s${teacher_eps_skip}_e${teacher_eps_equal}_ps${use_pls_sampling}_c${use_crop_aug}_r${data_aug_ratio}_b${max_reward_buffer_size}_${tau_min}_${tau_max}_${tau_delta}_r${rreset}_q${qreset}_th${init_k}_${increase_q}_${step_k}_mr${max_rr}
