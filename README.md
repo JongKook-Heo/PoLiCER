@@ -114,12 +114,12 @@ unset LD_PRELOAD
 export LD_PRELOAD=""
 ```
 
-## Citation (To be specified after camera ready)
+## Citation
 ```latex
 @inproceedings{
-anonymous2026policy,
+heo2026policy,
 title={Policy Likelihood-based Query Sampling and Critic-Exploited Reset for Efficient Preference-based Reinforcement Learning},
-author={Anonymous},
+author={Jongkook Heo and Jaehoon Kim and Young Jae Lee and Min Gu Kwak and Youngjoon Park and Seoung Bum Kim},
 booktitle={The Fourteenth International Conference on Learning Representations},
 year={2026},
 url={https://openreview.net/forum?id=ITeuGb2bYg}
