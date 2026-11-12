@@ -116,12 +116,12 @@ export LD_PRELOAD=""
 
 ## Citation
 ```latex
-@inproceedings{
-heo2026policy,
-title={Policy Likelihood-based Query Sampling and Critic-Exploited Reset for Efficient Preference-based Reinforcement Learning},
-author={Jongkook Heo and Jaehoon Kim and Young Jae Lee and Min Gu Kwak and Youngjoon Park and Seoung Bum Kim},
-booktitle={The Fourteenth International Conference on Learning Representations},
-year={2026},
-url={https://openreview.net/forum?id=ITeuGb2bYg}
+@inproceedings{heo2026policy,
+  title={Policy Likelihood-based Query Sampling and Critic-Exploited Reset for Efficient Preference-based Reinforcement Learning},
+  author={Heo, Jongkook and Kim, Jaehoon and Lee, Young Jae and Kwak, Min Gu and Park, Youngjoon and Kim, Seoung Bum},
+  booktitle={International Conference on Learning Representations},
+  volume={2026},
+  pages={148210--148236},
+  year={2026}
 }
 ```
